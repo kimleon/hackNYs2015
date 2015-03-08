@@ -32,7 +32,7 @@ body{
 	margin: 50px;
 }
 
-p{
+p, h2 {
 	font-size: 30px;
 	font-family: "Aleo";
 }
@@ -52,15 +52,19 @@ hr {
 }
 
 #left_bar{
-	background-color: #1A3380;
 	width: 200px;
 	float: left;
 	height: 500px;
+    text-align: center;
+}
+#left-bar-content {
+	background-color: #1A3380;
+	height: 500px;
+    padding: 20px;
 }
 
 #left_text{
-	font-size: 20px;
-	margin: 20px;
+	font-size: 15px;
 	color: white;
 }
 
@@ -91,6 +95,16 @@ hr {
 
 #bid_button{
 	font-family: "Aleo";
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    background-color: #1A3380; 
+    border: none;
+    color: #FFF;
+    padding: 10px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    width: 100px;
 }
 
 #bid_text{

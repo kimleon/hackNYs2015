@@ -3,12 +3,25 @@
 </head>
 <body>
 	<div id="wrapper">
-		<img src="/assets/nokcupid.jpg" width="128" height="128">
 	<div id="left_bar">
-		<p id="left_text">"askjfnkasjnf"</p>
+        <img src="/assets/nokcupid.jpg" width="128" id="logo">
+        <div id="left-bar-content">
+		<p id="left_text">
+            Testimonials
+            <br><br>
+            "I broke up with my boyfriend so my bff and I could split the $5."
+            <br>- Faiq
+            <br><br>
+            "Portable phones are Stalin's dreams"
+            <br>- RMS
+            <br><br>
+            "This doesn't work if you don't have a girlfriend..."
+            <br>- Shy
+        </p>
+        </div>
 	</div>
 	<div id="results_bar">
-		<p>Friends in Relationships</p>
+		<h2>Friends in Relationships</h2>
 		<hr>
 		<% @enslaved_friends.each do |friend| %>
 		<div id="each_friend">
@@ -17,8 +30,8 @@
 		    	<div id="name"><%= friend['name'] %></div>
 			    <form action="/venmo/bid" method="POST">
 			        <input hidden name="biddee" value="<%= friend['fb_id'] %>"> 
-			        <input type="number" name="amount" id="price" min="1" max="5" default=5> 
-			        <input id="bid_button" type="submit" value="Bid">
+			        $ <input type="number" name="amount" id="price" min="1" max="5" value="5"> 
+			        <br><br><input id="bid_button" type="submit" value="Bid">
 			    </form>
 				<% end %>
 				<p id="bid_text">How much would you bet on your friend becoming single?</p>

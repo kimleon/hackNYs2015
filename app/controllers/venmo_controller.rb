@@ -53,7 +53,7 @@ class VenmoController < ApplicationController
 				access_token=cur_user["venmo_access_token"]
 				params={
 					"access_token"=>access_token,
-					"phone"=>"16265521989",
+					"phone"=>"16265248129",
 					"amount"=>amount,
                     "note"=>"NOKCupid"
 				}
