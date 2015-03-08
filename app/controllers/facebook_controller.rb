@@ -16,7 +16,24 @@ class FacebookController < ApplicationController
         graph = Koala::Facebook::API.new(long_lived_access_token)
         fb_user = graph.get_object("me")
 
-        user = User.new()
-        user.update_attributes!(fb_id: fb_user.id, fb_access_token: long_lived_access_token)
+        cur_user = User.new()
+        cur_user.update_attributes!(fb_id: fb_user["id"], fb_access_token: long_lived_access_token, relationship_status: fb_user["relationship_status"])
+        session["cur_user"] = cur_user
+        redirect_to '/dashboard'
 	end
+
+    def search()
+        if session.has_key?("cur_user")
+            cur_user = session["cur_user"]
+            graph = Koala::Facebook::API.new(cur_user["fb_access_token"]) 
+            search_query = params[:search]
+            friends = @graph.get_connections("me", "friends")
+            friends.each {|f| do_something_with_item(f) } # it's a subclass of Array
+            while next_feed = feed.next_page do
+                friends.each {|f| do_something_with_item(f) } # it's a subclass of Array
+            end
+        else
+            redirect_to '/'
+        end
+    end
 end

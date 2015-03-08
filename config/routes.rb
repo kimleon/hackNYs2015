@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/", to: "index#index"
+  get "/dashboard", to: "index#dashboard"
   get "/facebook/callback", to: "facebook#callback"
   get "/venmo/callback", to: "venmo#callback"
   get "/venmo", to: "venmo#venmo"
