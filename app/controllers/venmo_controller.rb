@@ -9,16 +9,29 @@ class VenmoController < ApplicationController
 		
 		uri = URI("https://api.venmo.com/v1/oauth/access_token?client_id=#{client_id}&code=#{params[:code]}&client_secret=#{client_secret}")
 		venmo_res = Net::HTTP.get_response(uri).body
-		# access_token = @venmo_res.split("=")[1]
-
-		binding.pry
-
-		# uri_long_lived = URI("https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=#{@app_id}&client_secret=#{@app_secret}&fb_exchange_token=#{access_token}")
-		# @res_long_lived = Net::HTTP.get_response(uri_long_lived).body
-		# long_lived_access_token = @res.split("=")[1].gsub("&expires","")
 		
-		# binding.pry
-	
+		# binding.pry	
+	end
 
+
+	def charge()
+		if session.has_key?("cur_user")	
+			cur_user=session["cur_user"]
+			if cur_user.has_key?("venmo_access_token")		
+				amount=params[:amount]
+				access_token=cur_user["venmo_access_token"]
+				params={
+					"access_token"=>access_token,
+					"user_id"=>"kimberly-leon",
+					"amount"=>amount
+				}
+				uri=URI("https://api.venmo.com/v1/payments")
+				res=Net::HTTP.post_form(uri, params)
+			else
+				redirect_to "/venmo/login"
+			end
+		else
+			redirect_to "/"
+		end
 	end
 end
