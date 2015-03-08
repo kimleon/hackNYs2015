@@ -15,7 +15,6 @@ class FacebookController < ApplicationController
 
         graph = Koala::Facebook::API.new(long_lived_access_token)
         fb_user = graph.get_object("me")
-        binding.pry
         begin
             cur_user = User.find_by! fb_id: fb_user['id']
         rescue

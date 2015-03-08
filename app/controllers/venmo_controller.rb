@@ -16,7 +16,6 @@ class VenmoController < ApplicationController
             "client_secret" => client_secret
         }
 		venmo_res = JSON.parse(Net::HTTP.post_form(uri,p).body)
-        binding.pry
 		if session.has_key?("cur_user")	
 			cur_user=session["cur_user"]
             begin
@@ -65,7 +64,6 @@ class VenmoController < ApplicationController
                     biddee: biddee,
                     bidder: cur_user['fb_id']
                 )
-                binding.pry
 			else
 				redirect_to "https://api.venmo.com/v1/oauth/authorize?client_id=2429&scope=make_payments%20access_profile%20access_email%20access_balance&response_type=code"
 			end
