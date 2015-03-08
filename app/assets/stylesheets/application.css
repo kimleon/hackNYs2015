@@ -16,7 +16,7 @@
 
 
 img{
-	width: 200px;
+	width: 160px;
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -28,7 +28,7 @@ input{
 }
 
 body{
-	background-color: #E66993;
+	background-color: #1975D1;
 	margin: 50px;
 }
 
@@ -52,7 +52,7 @@ hr {
 }
 
 #left_bar{
-	background-color: #CC527A;
+	background-color: #1A3380;
 	width: 200px;
 	float: left;
 	height: 500px;
@@ -61,6 +61,7 @@ hr {
 #left_text{
 	font-size: 20px;
 	margin: 20px;
+	color: white;
 }
 
 #results_bar{
@@ -79,7 +80,7 @@ hr {
 }
 
 #info{
-	margin-right: 350px;
+	margin-right: 400px;
 	float: right;
 }
 
