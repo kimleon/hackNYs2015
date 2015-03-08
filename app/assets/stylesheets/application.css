@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+
+
+img{
+	width: 200px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+input{
+	font-family: "Aleo";
+	font-size: 24px;
+}
+
+body{
+	background-color: #E66993;
+	margin: 50px;
+}
+
+p{
+	font-size: 30px;
+	font-family: "Aleo";
+}
+
+hr { 
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+#wrapper{
+	width: 1100px;
+	margin: 0 auto;
+}
+
+#left_bar{
+	background-color: #CC527A;
+	width: 200px;
+	float: left;
+	height: 500px;
+}
+
+#left_text{
+	font-size: 20px;
+	margin: 20px;
+}
+
+#results_bar{
+	background-color: #F5F5F5;
+	padding: 25px;
+    right: 150px;
+    float: left;
+    width: 850px;
+}
+
+#name{
+	font-size: 24px;
+	font-family: "Aleo";
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#info{
+	margin-right: 350px;
+	float: right;
+}
+
+#price{
+	margin-right: 10px;
+	font-family: "Aleo";
+}
+
+#bid_button{
+	font-family: "Aleo";
+}
+
+#bid_text{
+	font-size: 10px;
+}
+
+#each_friend{
+	margin-top: 25px;
+}

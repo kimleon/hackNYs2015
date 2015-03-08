@@ -1,9 +1,30 @@
-<% @enslaved_friends.each do |friend| %>
-    <%= friend['name'] %>
-    <img src="<%= friend['picture_url'] %>">
-    <form action="/venmo/bid" method="POST">
-        <input hidden name="biddee" value="<%= friend['fb_id'] %>"> 
-        <input type="number" name="amount" id="price" min="1" max="5" default=5> 
-        <input type="submit" value="Bid">
-    </form>
-<% end %>
+<head>
+<link rel="stylesheet" type="text/css" href="/assets/application.css">
+</head>
+<body>
+	<div id="wrapper">
+	<div id="left_bar">
+		<p id="left_text">"askjfnkasjnf"</p>
+	</div>
+	<div id="results_bar">
+		<p>Friends in Relationships</p>
+		<hr>
+		<% @enslaved_friends.each do |friend| %>
+		<div id="each_friend">
+		    <img src="<%= friend['picture_url'] %>">
+		    <div id="info">
+		    	<div id="name"><%= friend['name'] %></div>
+			    <form action="/venmo/bid" method="POST">
+			        <input hidden name="biddee" value="<%= friend['fb_id'] %>"> 
+			        <input type="number" name="amount" id="price" min="1" max="5" default=5> 
+			        <input id="bid_button" type="submit" value="Bid">
+			    </form>
+				<% end %>
+				<p id="bid_text">How much would you bet on your friend becoming single?</p>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</body>
+

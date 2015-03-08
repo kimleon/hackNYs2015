@@ -7,14 +7,3 @@
 Amount: $ <input type="number" name="bid_amount" id="price" min="1" max="5" default=5><br>
 
 <a class="venmo-pay-button" id="pay_button" data-recipient-id="kimberly-leon" data-amount=5 ></a>
-
-
-
-
-<script type="text/javascript">
-	var input=document.getElementById('price');
-	input.addEventListener("change",function(e){
-		document.getElementById("pay_button").setAttribute("data-amount", e.value);
-	})
-</script>
-
