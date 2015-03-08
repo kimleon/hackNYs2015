@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308095207) do
+ActiveRecord::Schema.define(version: 20150308102932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bids", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "bid"
     t.integer  "time_limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "biddee"
+    t.string   "bidder"
+    t.integer  "user_id"
   end
+
+  add_index "bids", ["user_id"], name: "index_bids_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "fb_id"
@@ -38,4 +42,5 @@ ActiveRecord::Schema.define(version: 20150308095207) do
 
   add_index "users", ["fb_id"], name: "index_users_on_fb_id", unique: true, using: :btree
 
+  add_foreign_key "bids", "users"
 end

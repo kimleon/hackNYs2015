@@ -17,10 +17,11 @@ class VenmoController < ApplicationController
 	end
 
 
-	def charge()
+	def bid()
 		if session.has_key?("cur_user")	
 			cur_user=session["cur_user"]
 			if cur_user.has_key?("venmo_access_token")		
+				biddee=params[:biddee]
 				amount=params[:amount]
 				access_token=cur_user["venmo_access_token"]
 				params={
