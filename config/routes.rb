@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/facebook/callback", to: "facebook#callback"
   get "/facebook/search", to: "facebook#search"
   get "/venmo/callback", to: "venmo#callback"
-  get "/venmo", to: "venmo#venmo"
+  post "/venmo/bid", to: "venmo#bid"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,9 @@
 <% @enslaved_friends.each do |friend| %>
     <%= friend['name'] %>
     <img src="<%= friend['picture_url'] %>">
+    <form action="/venmo/bid" method="POST">
+        <input hidden name="biddee" value="<%= friend['fb_id'] %>"> 
+        <input type="number" name="amount" id="price" min="1" max="5" default=5> 
+        <input type="submit" value="Bid">
+    </form>
 <% end %>
