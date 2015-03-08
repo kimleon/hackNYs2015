@@ -64,6 +64,7 @@ class VenmoController < ApplicationController
                     biddee: biddee,
                     bidder: cur_user['fb_id']
                 )
+                redirect_to "/dashboard"
 			else
 				redirect_to "https://api.venmo.com/v1/oauth/authorize?client_id=2429&scope=make_payments%20access_profile%20access_email%20access_balance&response_type=code"
 			end

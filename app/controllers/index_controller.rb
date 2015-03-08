@@ -18,7 +18,7 @@ class IndexController < ApplicationController
                 } 
             end
             @enslaved_friends = User
-                .where(relationship_status: 'In a relationship')
+                .where('relationship_status LIKE ?', '%In a relationship%')
                 .where(:fb_id => friends_list)
         else
             redirect_to '/'
