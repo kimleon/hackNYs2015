@@ -1,1 +1,4 @@
-<%= @friends %>
+<% @enslaved_friends.each do |friend| %>
+    <%= friend['name'] %>
+    <img src="<%= friend['picture_url'] %>">
+<% end %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "/", to: "index#index"
   get "/dashboard", to: "index#dashboard"
   get "/facebook/callback", to: "facebook#callback"
+  get "/facebook/search", to: "facebook#search"
   get "/venmo/callback", to: "venmo#callback"
   get "/venmo", to: "venmo#venmo"
   # The priority is based upon order of creation: first created -> highest priority.

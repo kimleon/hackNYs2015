@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308090005) do
+ActiveRecord::Schema.define(version: 20150308095207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20150308090005) do
     t.string   "relationship_status"
     t.string   "venmo_access_token"
     t.string   "venmo_username"
+    t.string   "name"
+    t.string   "picture_url"
   end
 
-  add_index "users", ["fb_id"], name: "index_users_on_fb_id", using: :btree
+  add_index "users", ["fb_id"], name: "index_users_on_fb_id", unique: true, using: :btree
 
 end
