@@ -7,10 +7,13 @@ class VenmoController < ApplicationController
 		client_id  = ENV["VENMO_CLIENT_ID"]
 		client_secret = ENV["VENMO_CLIENT_SECRET"]
 		
-		uri = URI("https://api.venmo.com/v1/oauth/access_token?client_id=#{client_id}&code=#{params[:code]}&client_secret=#{client_secret}")
-		venmo_res = Net::HTTP.get_response(uri).body
-		
-		# binding.pry	
+		uri = URI("https://api.venmo.com/v1/oauth/access_token")
+        p = {
+            "client_id" => client_id,
+            "code" => params[:code],
+            "client_secret" => client_secret
+        }
+		venmo_res = Net::HTTP.post_form(uri,p).body
 	end
 
 
